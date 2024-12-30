@@ -1,0 +1,62 @@
+<body>
+<h1>Appointment Form</h1>
+
+<form [formGroup]="appointmentform" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Patient Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name">
+  </div>
+
+  <div>
+    <label for="date">Appointment Date:</label>
+    <input type="date" id="date" name="date">
+  </div>
+
+  <div>
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time">
+  </div>
+
+  <div>
+    <label for="notes">Notes:</label>
+    <textarea id="notes" name="notes" placeholder="Enter any notes..."></textarea>
+  </div>
+
+  <button type="submit" >Submit</button>
+</form>
+</body>
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: Company Info -->
+    <div class="footer-sections">
+      <h3>About Us</h3>
+      <p>Our pharmacy provides the best medical products</p> 
+          <p>and health services. We are committed to improving</p>
+           <p>community health and well-being.</p>
+    </div>
+    <div class="social-icons">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    
+
+    <!-- Column 3: Contact Info -->
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>📍 Address: 123 Pharmacy Street, Health City</p>
+      <p>📞 Phone: +1 (555) 123-4567</p>
+      <p>✉️ Email: support&#64;pharmacy.com</p>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {{ currentYear }} Pharmacy Management System. All rights reserved.</p>
+  </div>
+</footer>
+
+
+

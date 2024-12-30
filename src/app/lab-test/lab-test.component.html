@@ -1,0 +1,92 @@
+<body>
+<h2>Request a Lab Test</h2>
+
+<form [formGroup]="labTestForm" (ngSubmit)="onSubmit()">
+  <!-- Test Name -->
+  <div class="form-group">
+    <label for="testName">Test Name</label>
+    <input id="testName" formControlName="testName" type="text" placeholder="Enter the test name" />
+    <div *ngIf="formControls['testName'].invalid && formControls['testName'].touched" class="error">
+      Test name is required (at least 3 characters).
+    </div>
+  </div>
+
+  <!-- Patient Name -->
+  <div class="form-group">
+    <label for="patientName">Patient Name</label>
+    <input id="patientName" formControlName="patientName" type="text" placeholder="Enter the patient name" />
+    <div *ngIf="formControls['patientName'].invalid && formControls['patientName'].touched" class="error">
+      Patient name is required (at least 3 characters).
+    </div>
+  </div>
+
+  <!-- Contact Number -->
+  <div class="form-group">
+    <label for="contactNumber">Contact Number</label>
+    <input id="contactNumber" formControlName="contactNumber" type="tel" placeholder="Enter your contact number" />
+    <div *ngIf="formControls['contactNumber'].invalid && formControls['contactNumber'].touched" class="error">
+      Contact number must be a valid 10-digit number.
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" type="email" placeholder="Enter your email" />
+    <div *ngIf="formControls['email'].invalid && formControls['email'].touched" class="error">
+      Please enter a valid email address.
+    </div>
+  </div>
+
+  <!-- Preferred Date -->
+  <div class="form-group">
+    <label for="preferredDate">Preferred Date</label>
+    <input id="preferredDate" formControlName="preferredDate" type="date" />
+    <div *ngIf="formControls['preferredDate'].invalid && formControls['preferredDate'].touched" class="error">
+      Please select a preferred date.
+    </div>
+  </div>
+
+  <!-- Notes -->
+  <div class="form-group">
+    <label for="notes">Notes</label>
+    <textarea id="notes" formControlName="notes" placeholder="Any specific instructions or notes"></textarea>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="labTestForm.invalid">Request Test</button>
+</form>
+</body>
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: Company Info -->
+    <div class="footer-sections">
+      <h3>About Us</h3>
+      <p>Our pharmacy provides the best medical products</p> 
+          <p>and health services. We are committed to improving</p>
+           <p>community health and well-being.</p>
+    </div>
+    <div class="social-icons">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    
+
+    <!-- Column 3: Contact Info -->
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>📍 Address: 123 Pharmacy Street, Health City</p>
+      <p>📞 Phone: +1 (555) 123-4567</p>
+      <p>✉️ Email: support&#64;pharmacy.com</p>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {{ currentYear }} Pharmacy Management System. All rights reserved.</p>
+  </div>
+</footer>
+

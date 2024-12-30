@@ -1,0 +1,63 @@
+
+<div class="dashboard">
+    <!-- Page Header -->
+    <header class="dashboard-header">
+      <h1>Admin Dashboard</h1>
+      <p>Welcome, Admin! Here is an overview of your pharmacy's performance.</p>
+    </header>
+  
+    <!-- Stats Section -->
+    <section class="stats-container">
+      <div class="stat-card">
+        <h3>Total Medicines</h3>
+        <p>{{ totalMedicines }}</p>
+      </div>
+  
+      <div class="stat-card">
+        <h3>Lab-Test</h3>
+        <!-- <p>${{ totalSales }}</p> -->
+      </div>
+  
+      <div class="stat-card">
+        <h3>Appointment</h3>
+        <!-- <p>{{ totalSuppliers }}</p> -->
+      </div>
+  
+      <div class="stat-card">
+        <h3> Orders</h3>
+        <!-- <p>{{ pendingOrders }}</p> -->
+      </div>
+    </section>
+  
+    <!-- Sales Chart -->
+    <section class="chart-section">
+      <h2>Sales Overview</h2>
+      <canvas id="salesChart"></canvas>
+    </section>
+  
+    <!-- Recent Orders Table -->
+    <section class="recent-orders">
+      <h2>Recent Orders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Date</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr *ngFor="let order of recentOrders">
+            <td>{{ order.id }}</td>
+            <td>{{ order.customer }}</td>
+            <td>{{ order.date }}</td>
+            <td>${{ order.total }}</td>
+            <td><span class="status {{ order.status }}">{{ order.status }}</span></td>
+          </tr> -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+  

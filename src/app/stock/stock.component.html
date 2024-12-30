@@ -1,0 +1,100 @@
+<body>
+    <div class="container">
+    <h1>Pharmacy Stock Management</h1>
+  
+    <!-- Form to Add / Edit Stock Item -->
+    <form [formGroup]="stockForm" (ngSubmit)="addOrUpdateStock()">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" placeholder="Medicine Name" />
+      </div>
+  
+      <div>
+        <label for="category">Category</label>
+        <input id="category" formControlName="category" placeholder="Category" />
+      </div>
+  
+      <div>
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" formControlName="quantity" />
+      </div>
+  
+      <div>
+        <label for="price">Price</label>
+        <input type="number" id="price" formControlName="price" step="0.01" />
+      </div>
+  
+      <div>
+        <label for="expiryDate">Expiry Date</label>
+        <input type="date" id="expiryDate" formControlName="expiryDate" />
+      </div>
+  
+      <button type="submit">{{ editMode ? 'Update' : 'Add' }} Stock</button>
+      <button type="button" (click)="resetForm()">Cancel</button>
+    </form>
+  
+    <!-- Stock Table -->
+    <h2>Stock List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Expiry Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of stockItems; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price | currency }}</td>
+          <td>{{ item.expiryDate | date }}</td>
+          <td>
+            <button (click)="editStockItem(item)">Edit</button>
+            <button (click)="deleteStockItem(item.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+<footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1: Company Info -->
+      <div class="footer-sections">
+        <h3>About Us</h3>
+        <p>Our pharmacy provides the best medical products</p> 
+            <p>and health services. We are committed to improving</p>
+             <p>community health and well-being.</p>
+      </div>
+      <div class="social-icons">
+        <h3>Follow Us</h3>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      
+  
+      <!-- Column 3: Contact Info -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>📍 Address: 123 Pharmacy Street, Health City</p>
+        <p>📞 Phone: +1 (555) 123-4567</p>
+        <p>✉️ Email: support&#64;pharmacy.com</p>
+
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© {{ currentYear }} Pharmacy Management System. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  

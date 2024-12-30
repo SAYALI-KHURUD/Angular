@@ -1,0 +1,34 @@
+
+
+
+
+<nav class="navbar">
+  <div class="brand-title">Pharmacy Admin</div>
+
+  <a href="javascript:void(0);" class="toggle-button" id="toggle-button">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+
+  <div class="navbar-links" id="navbar-links">
+    <ul>
+      <li><a routerLink = "/welcome" routerLinkActive = "active"> </a></li>
+      <!-- <li><a routerLink = "/dashboard" routerLinkActive = "active">Dashboard </a></li> -->
+      
+      <li><a routerLink = "/appointment" routerLinkActive = "active"> Appointment </a></li>
+      <li><a routerLink = "/order-medicine" routerLinkActive = "active"> Order-Medicine </a></li>
+   
+      <li><a routerLink = "/lab-test" routerLinkActive = "active"> Lab-Test </a></li>
+      
+      <li><a routerLink = "/stock" routerLinkActive = "active"> Stock</a></li>
+      <li><a href="/logout" class="logout-button" (click)="navigateTo('/logout')">Logout</a></li>
+      <!-- <button (click)="navigateTo('/logout')" class="logout-button">Logout</button> -->
+      <!-- <button (click)="onLogout()">Logout</button> -->
+
+    </ul>
+  </div>
+</nav> 
+
+
+<router-outlet /> 
